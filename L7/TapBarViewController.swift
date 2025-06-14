@@ -10,10 +10,11 @@ import UIKit
 class TapBarViewController: UITabBarController {
     let personsList = generateData()
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let personsListVC = TapBarViewController.topViewController as! PersonsListViewController
+        let personsListVC = tabBarController. as! PersonsListViewController }!
+        personsListViewController.persons = personsList
+        comtacsInfoViewController.persons = personsList
     }
-    
 }
+
