@@ -7,8 +7,8 @@
 
 import UIKit
 
-class PersonsListViewController: UITableView {
-    var perons : [Person] = []
+class PersonsListViewController: UITableViewController {
+    var persons : [Person] = []
 
     /*
     // Only override draw() if you perform custom drawing.

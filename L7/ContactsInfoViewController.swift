@@ -7,12 +7,11 @@
 
 import UIKit
 
-class ContactsInfoViewController: UITableView {
+class ContactsInfoViewController: UITableViewController {
     
 var persons : [Person] = []
     
-    override func viewDidLoad() {
-        super.viewWithTag(1)
+
         
     }
 
@@ -24,4 +23,4 @@ var persons : [Person] = []
     }
     */
 
-}
+
