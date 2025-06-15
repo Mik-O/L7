@@ -30,5 +30,13 @@ class PersonsListViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailsInfoContactVC = segue.destination as! DetailsInfoContactsViewController
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let person = persons[indexPath.row]
+        detailsInfoContactVC.person = person
+        
+    }
 
 }
