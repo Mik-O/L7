@@ -8,16 +8,21 @@
 import UIKit
 
 class TapBarViewController: UITabBarController {
-    let personsList = generateData()
+    let persons = Person.getContactList()
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-       
-       let personsListVC = viewControllers?.compactMap { $0 as? PersonsListViewController }.first
-       let contactsVC = viewControllers?.compactMap { $0 as? ContactsInfoViewController }.first
-       
-       personsListVC?.persons = personsList
-       contactsVC?.persons = personsList
+        setupViewControllers(with: persons)
+    }
+     
+    private func setupViewControllers(with perons: [Person]) {
+        let personsVC = viewControllers?.first as! PersonsListViewController
+        let conactsVC = viewControllers?.last as! ContactsInfoViewController
+        
+        personsVC.persons = perons
+        conactsVC.persons = perons
+        
+        
     }
 }
 
